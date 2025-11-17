@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: armamento_ws_games
 -- ------------------------------------------------------
--- Server version	8.0.43-0ubuntu0.24.04.2
+-- Server version  8.0.43-0ubuntu0.24.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Games`
+-- Table structure for table `games`
 --
 
-DROP TABLE IF EXISTS `Games`;
+DROP TABLE IF EXISTS `games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Games` (
+CREATE TABLE `games` (
   `ID` bigint unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) DEFAULT NULL,
   `description` text,
@@ -41,12 +41,12 @@ CREATE TABLE `Games` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Games`
+-- Dumping data for table `games`
 --
 
-LOCK TABLES `Games` WRITE;
-/*!40000 ALTER TABLE `Games` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Games` ENABLE KEYS */;
+LOCK TABLES `games` WRITE;
+/*!40000 ALTER TABLE `games` DISABLE KEYS */;
+/*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -328,9 +328,10 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'johndoe','john.doe@example.com','2024-02-01 02:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-02-01 01:00:00','2025-10-20 07:30:00','2025-10-20 07:30:00',0,''),(2,'sarahsmith','sarah.smith@example.com','2024-02-05 03:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-02-05 02:00:00','2025-10-24 02:15:00','2025-10-24 02:15:00',0,''),(3,'mikejohnson','mike.johnson@example.com','2024-03-10 06:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-03-10 05:00:00','2025-10-23 10:45:00','2025-10-23 10:45:00',0,''),(4,'emilychen','emily.chen@example.com','2024-03-15 01:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-03-15 00:00:00','2025-10-25 04:00:00','2025-10-25 04:00:00',0,''),(6,'lisagarcia','lisa.garcia@example.com','2024-04-20 02:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-04-20 01:00:00','2025-10-26 00:30:00','2025-10-26 00:30:00',0,''),(7,'robertlee','robert.lee@example.com','2024-05-05 04:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-05-05 03:00:00','2025-10-22 08:20:00','2025-10-22 08:20:00',0,''),(8,'jenniferkim','jennifer.kim@example.com','2024-06-10 07:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-06-10 06:00:00','2025-10-21 06:10:00','2025-10-21 06:10:00',0,''),(9,'chrismartinez','chris.martinez@example.com','2024-07-01 05:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-07-01 04:00:00','2025-10-19 03:45:00','2025-10-19 03:45:00',0,''),(10,'jessicabrown','jessica.brown@example.com','2024-08-15 03:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-08-15 02:00:00','2025-10-18 01:30:00','2025-10-18 01:30:00',0,'');
+INSERT INTO `users` VALUES (1,'johndoe','john.doe@example.com','2024-02-01 02:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-02-01 01:00:00','2025-10-20 07:30:00','2025-10-20 07:30:00',0,''),(2,'sarahsmith','sarah.smith@example.com','2024-02-05 03:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-02-05 02:00:00','2025-10-24 02:15:00','2025-10-24 02:15:00',0,''),(3,'mikejohnson','mike.johnson@example.com','2024-03-10 06:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-03-10 05:00:00','2025-10-23 10:45:00','2025-10-23 10:45:00',0,''),(4,'emilychen','emily.chen@example.com','2024-03-15 01:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-03-15 00:00:00','2025-10-25 04:00:00','2025-10-25 04:00:00',0,''),(6,'lisagarcia','lisa.garcia@example.com','2024-04-20 02:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-04-20 01:00:00','2025-10-26 00:30:00','2025-10-26 00:30:00',0,''),(7,'robertlee','robert.lee@example.com','2024-05-05 04:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-05-05 03:00:00','2025-10-22 08:20:00','2025-10-22 08:20:00',0,''),(8,'jenniferkim','jennifer.kim@example.com','2024-06-10 07:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-06-10 06:00:00','2025-10-21 06:45:00','2025-10-21 06:45:00',0,''),(9,'danielwong','daniel.wong@example.com','2024-07-15 08:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-07-15 07:00:00','2025-10-20 02:00:00','2025-10-20 02:00:00',0,''),(10,'ashleymiller','ashley.miller@example.com','2024-08-01 09:00:00','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi','','2024-08-01 08:00:00','2025-10-19 01:30:00','2025-10-19 01:30:00',0,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -340,5 +341,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2025-10-29 18:37:55

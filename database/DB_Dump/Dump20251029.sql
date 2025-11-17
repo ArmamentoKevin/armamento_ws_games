@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `misola_ws_games` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `misola_ws_games`;
+CREATE DATABASE  IF NOT EXISTS `armamento_ws_games` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `armamento_ws_games`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Linux (x86_64)
 --
--- Host: localhost    Database: misola_ws_games
+-- Host: localhost    Database: armamento_ws_games
 -- ------------------------------------------------------
 -- Server version	8.0.43-0ubuntu0.24.04.2
 

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,32 +12,29 @@ Route::get('/', function () {
 // Admin dashboard
 Route::get('/admin', [AdminController::class, 'index']);
 
-// Platform user page
-Route::get('/admin/user/{username}', function ($username) {
-    return view('admin.user.index', ['username' => $username]);
-});
+// Route for Platform user
+Route::get('/admin/users',[UserController::class,'index']);
+
+// modifying the user profile
+Route::get('/admin/users/{user}',[UserController::class,'show']);
 
 // All games
-Route::get('/admin/games', function () {
-    return view('admin.games.index');
-});
+Route::get('/admin/games',[GameController::class,'index']);
 
-// Individual game pages
-Route::get('/admin/games/{game}', function ($game) {
-    return view('admin.games.show', ['game' => $game]);
-});
+//modifying games
+Route::get('/admin/games/{game}',[GameController::class,'show']);
 
 // Block user
-Route::get('/admin/users/{username}/block', function ($username) {
-    return "<h1>Blocking $username</h1>";
+Route::put('/admin/users/{username}/block',function(){
+    return "<h1> Blocking User... </h1>";
 });
 
 // Unblock user
-Route::get('/admin/users/{username}/unblock', function ($username) {
-    return "<h1>Unblocking $username</h1>";
+Route::put('/admin/users/{username}/unblock',function(){
+    return "<h1> Unblocking User... </h1>";
 });
 
 // Delete game
-Route::delete('/admin/games/{slug}', function ($slug) {
-    return "<h1>Deleting game $slug</h1>";
+Route::delete('/admin/games/{slug}',function($games){
+    return "<h1> Deleting Game </h1>";
 });

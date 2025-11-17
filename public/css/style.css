@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6f6;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    color: #333;
+    font-size: 14px;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+.page-content {
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.admin-table, #gameTbl {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+
+.admin-table thead th, #gameTbl thead th {
+    background: #eaeaea;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.admin-table td, #gameTbl td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-table tr:hover, #gameTbl tr:hover {
+    background: #f9f9f9;
+}
+
+.admin-table a, #gameTbl a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.admin-table a:hover, #gameTbl a:hover {
+    text-decoration: underline;
+}
+
+.action-btn {
+    background: #1a73e8;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.action-btn:hover {
+    background: #155ab6;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 500px;
+    color: #777;
+}
