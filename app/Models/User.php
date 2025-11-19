@@ -45,4 +45,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function getRouteKeyName()
+    {
+     return 'username';
+    }
+
+    public function games()
+    {
+        return $this->hasMany(Game::class,'author_id');
+    }
+
+    public function scores()
+    {
+        return $this->hasMany(Score::class);
+    }
 }
