@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Game extends Model
 {
-    const UPDATED_AT = null;
+    use SoftDeletes;
 
     public function getRouteKeyName(): string
     {
@@ -21,6 +21,10 @@ class Game extends Model
 
     public function scores()
     {
-        return $this->hasMany(Score::class);
+        return $this->hasMany(Score::class, 'game_id');
+    }
+
+    public function topScores() {
+        return $this->scores->orderByDesc('score')->limit(10);
     }
 }

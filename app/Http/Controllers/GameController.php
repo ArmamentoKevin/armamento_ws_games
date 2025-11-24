@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $games = Game::with('author')->get();
+        $search = $request->input('search');
+
+        $games = Game::when($search, function ($query, $search) {
+                    $query->where('title', 'LIKE', '%' . $search . '%')
+                         ->orWhere('description', 'LIKE', '%' . $search . '%');
+        })
+        ->paginate(10)
+        ->withQueryString();
+
         return view('admin.games.index', compact('games'));
     }
 
@@ -17,4 +25,11 @@ class GameController extends Controller
     {
         return view('admin.games.show', compact('game'));
     }
+
+    public function destroy(Game $game)
+    {
+        $game->delete();
+        return redirect()->route('admin.games.index')->with('success', 'Game deleted successfully.');
+    }
+
 }

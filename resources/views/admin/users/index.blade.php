@@ -16,12 +16,13 @@
                 @foreach ($platform_users as $user )
 
                 <tr>
-                    <td>{{ $user->username }}</td>
-                    <td>{{ $user->created_at }}</td>
-                    <td>{{ $user->last_login ?? 'Never' }}</td>
+                    <td>{{ $user-> username }}</td>
+                    <td>{{ $user-> created_at }}</td>
+                    <td>{{ $user-> last_login ?? 'Never' }}</td>
                     <td><a href={{ url('admin/users/' .$user->username)}}>View Profile</a></td>
                 </tr>
                 @endforeach
             </tbody>
-        </table> 
+        </table>
+        {{ $platform_users->links() }}
 </x-layout>

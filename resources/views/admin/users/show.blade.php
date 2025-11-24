@@ -1,22 +1,23 @@
 <x-layout>
     <x-slot:subtitle>
-        {{ $user->username }}
+        {{ $user-> username }}
 </x-slot>
-       <h2>{{ $user->username }}</h2>
-       <p>Email: {{ $user->email }} </p>
-       <p>Registration Date:  {{ $user->created_at }}</p>
-       <p>Last Login:  {{ $user->last_login ?? 'Never' }}</p>
+       <h2>{{ $user-> username }}</h2>
+       
+       <p>Email: {{ $user-> email }} </p>
+       <p>Registration Date:  {{ $user-> created_at }}</p>
+       <p>Last Login:  {{ $user-> last_login ?? 'Never' }}</p>
        <button>Block</button>
        
        <section>
-        <header> Developed Games</header>
+        <h3> Developed Games</h3>
         @if($user->games->isEmpty())
             <p>This user has not developed any games yet.</p>
         @else
-            @foreach ($user->games as $game)
+            @foreach ($user-> games as $game)
                 <div class="game-card">
-                    <h4>{{ $game->title }}</h4>
-                    <p>{{ $game->description }}</p>
+                    <h4>{{ $game-> title }}</h4>
+                    <p>{{ $game-> description }}</p>
                 </div>
             @endforeach
         @endif
@@ -27,10 +28,11 @@
         @if($user->games->isEmpty())
             <p>This user has not played any games yet.</p>
         @else
-            @foreach ($user->scores as $score)
-                <div class="played-game-card">
-                    <h4>{{ $score->game->title }}</h4>
-                    <p>Score: {{ $score->points }}</p>
+            @foreach ($user->playedGames as $game)
+                <div class="game-card">
+                    <h4>{{ $game-> title }}</h4>
+                    <p>{{ $game-> description }}</p>
+                    <p>Highest Score: {{ $game->pivot->score }}</p>
                 </div>
             @endforeach
         @endif

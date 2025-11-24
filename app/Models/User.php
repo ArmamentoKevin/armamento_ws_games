@@ -60,4 +60,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Score::class);
     }
+
+    public function playedGames()
+    {
+        return $this->belongsToMany(Game::class, 'scores')
+        ->withPivot('id', 'score', 'timestamp')
+        ->whereIn('scores.id', function($query) {
+            $query->selectRaw('MAX(id)')
+                ->from('scores')
+                ->where('user_id', $this->id)
+                ->groupBy('game_id');
+        });
+    }
 }

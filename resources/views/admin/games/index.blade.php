@@ -4,7 +4,11 @@
     </x-slot>
 
     <h2>Games</h2>
+    <form method="GET" action={{ url('admin/games') }}>
+        <input type="search" name="search" placeholder="Search games...">
+        <button type="submit">Search</button>
 
+    </form>
     <table id="gameTbl">
         <thead>
             <tr>
@@ -19,8 +23,8 @@
         <tbody>
             @foreach ($games as $game)
                 <tr>
-                    <td>{{ $game->title }}</td>
-                    <td>{{ $game->description }}</td>
+                    <td>{{ $game-> title }}</td>
+                    <td>{{ $game-> description }}</td>
                     <td>{{ optional($game->author)->username ?? 'N/A' }}</td>
                     <td>{{ $game->created_at->format('Y-m-d') }}</td>
 
@@ -31,4 +35,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ $games->links() }}
 </x-layout>

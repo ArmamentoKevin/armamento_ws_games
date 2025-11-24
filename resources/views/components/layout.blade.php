@@ -7,6 +7,7 @@
     <title>WS Games {{ $subtitle ?? 'Kevin' }}</title>
 
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+                            @vite('resources/css/app.css')
 </head>
 
 <body>
