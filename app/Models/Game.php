@@ -25,6 +25,6 @@ class Game extends Model
     }
 
     public function topScores() {
-        return $this->scores->orderByDesc('score')->limit(10);
+        return $this->scores()->orderByDesc('score')->limit(10);
     }
 }

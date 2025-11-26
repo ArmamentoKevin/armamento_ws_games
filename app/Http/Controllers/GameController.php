@@ -7,18 +7,21 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+
     public function index(Request $request)
     {
         $search = $request->input('search');
 
         $games = Game::when($search, function ($query, $search) {
-                    $query->where('title', 'LIKE', '%' . $search . '%')
-                         ->orWhere('description', 'LIKE', '%' . $search . '%');
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'LIKE', "%{$search}%")
+                  ->orWhere('description', 'LIKE', "%{$search}%");
+            });
         })
         ->paginate(10)
         ->withQueryString();
 
-        return view('admin.games.index', compact('games'));
+        return view('admin.games.index', compact('games', 'search'));
     }
 
     public function show(Game $game)
@@ -29,7 +32,9 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
-        return redirect()->route('admin.games.index')->with('success', 'Game deleted successfully.');
-    }
 
+        return redirect()
+            ->route('admin.games.index')
+            ->with('success', 'Game deleted successfully.');
+    }
 }
