@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function index() {
         $admin_users = Admin::all();
-        return view('admin.index', compact('admin_users'));
+        return view('admin.dashboard', compact('admin_users'));
     }
 }

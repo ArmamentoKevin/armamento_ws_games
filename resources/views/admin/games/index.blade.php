@@ -26,7 +26,7 @@
                     <td>{{ $game->description }}</td>
                     <td>{{ optional($game->author)->username ?? 'N/A' }}</td>
                     <td>{{ $game->created_at->format('Y-m-d') }}</td>
-                    <td><a href="{{ url('admin/games/' . $game->id) }}">View Game</a></td>
+                    <td><a href="{{ url('admin/games/' . $game->slug) }}">View Game</a></td>
                 </tr>
             @endforeach
         </tbody>

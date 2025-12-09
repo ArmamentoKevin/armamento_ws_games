@@ -19,8 +19,19 @@
                     <li><a href="{{ url('admin') }}">Admin Users</a></li>
                     <li><a href="{{ url('admin/users') }}">Platform Users</a></li>
                     <li><a href="{{ url('admin/games') }}">Games</a></li>
+                    <li>
+                        <a href="{{ route('admin.logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('admin-logout-form').submit();">
+                            Logout
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
+            <!-- Hidden logout form -->
+            <form id="admin-logout-form" action="{{ route('admin.logout') }}" method="POST" style="display:none;">
+                @csrf
+            </form>
         </div>
     </header>
 
