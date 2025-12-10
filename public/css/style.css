@@ -220,3 +220,73 @@ section {
     margin-bottom: 4px;
     color: #555;
 }
+
+
+/*ADMIN LOGIN PAGE*/
+
+/* Page background for admin login ONLY */
+.admin-login-body {
+    background: linear-gradient(135deg, #0d0d0d, #1c1c1c) !important;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login card container */
+.login-card {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 380px;
+    width: 100%;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Label */
+.login-label {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+/* Input fields */
+.login-input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.20);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    color: white;
+}
+.login-input::placeholder { color: #cccccc; }
+.login-input:focus {
+    outline: none;
+    border-color: #60a5fa;
+}
+
+/* Submit button */
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+}
+.login-button:hover {
+    background: #1d4ed8;
+}
+
+/* Error box */
+.error-box {
+    background: rgba(220, 38, 38, 0.8);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}

@@ -9,17 +9,15 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\Users\GameController as UsersGameController;
 
 
-// =====================================
+
 // PUBLIC HOME PAGE
-// =====================================
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-// =====================================
+
 // USER ROUTES
-// =====================================
 
 // Dashboard (User Games List)
 Route::get('/dashboard', [UsersGameController::class, 'index'])
@@ -43,9 +41,9 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-// =====================================
+
 // ADMIN AUTH (LOGIN PAGE & PROCESS)
-// =====================================
+
 Route::get('/admin/login', function () {
     return view('admin.auth.login');
 })->name('admin.login');
@@ -53,9 +51,9 @@ Route::get('/admin/login', function () {
 Route::post('/admin/login', [AdminAuthController::class, 'login']);
 
 
-// =====================================
+
 // ADMIN PROTECTED ROUTES
-// =====================================
+
 Route::middleware('auth:admin')->group(function () {
 
     // Admin Dashboard

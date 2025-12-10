@@ -34,7 +34,7 @@ class GameController extends Controller
         $game->delete();
 
         return redirect()
-            ->route('admin.games.index')
+            ->route('admin.games.show')
             ->with('success', 'Game deleted successfully.');
     }
 }

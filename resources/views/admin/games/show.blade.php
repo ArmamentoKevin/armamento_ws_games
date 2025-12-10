@@ -14,7 +14,7 @@
     <p>Author: {{ optional($game->author)->username ?? 'N/A' }}</p>
     <p>Created at: {{ $game->created_at }}</p>
 
-    <h3>Top Scores</h3>
+    <h3>Top Scores</h3> 
     <div id="top-scores">
         @if($game->topScores->isEmpty())
             <p>No scores recorded for this game yet.</p>
